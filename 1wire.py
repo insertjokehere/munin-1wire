@@ -3,8 +3,6 @@
 import os
 from munin import MuninPlugin
 
-#temps = {"Tank 1":"28-00000437ddab","Tank 2":"28-000004371f3c", "Ambient":" "}
-
 BUSPATH = "/sys/bus/w1/devices/"
 ALIAS_SUFFIX = "alias_"
 
