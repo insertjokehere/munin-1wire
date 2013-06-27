@@ -43,7 +43,7 @@ class TemperaturePlugin(MuninPlugin):
 
 		f = []
 
-		for name in sensors.keys()
+		for name in sensors.keys():
 			f.append((self._safeName(name),dict(
 				label = name,
 				info = "Temperature of "+name,
