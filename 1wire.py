@@ -26,7 +26,7 @@ class TemperaturePlugin(MuninPlugin):
 		#map the alias' to the sensor ID
 		smap = {}
 		for s in sensors:
-			alias = ALIAS_SUFFIX+s
+			alias = ALIAS_SUFFIX+s[3:] #strip the family ID
 			if alias in os.environ and not alias in smap.keys():
 				smap[os.environ[alias]] = s
 			else:
