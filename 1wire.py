@@ -24,14 +24,15 @@ class TemperaturePlugin(MuninPlugin):
 			sensors = [f for f in listdir(BUSPATH) if os.path.isdir(os.path.join(BUSPATH,f)) and os.path.exists(os.path.join(BUSPATH,f,w1_slave))]
 
 		#map the alias' to the sensor ID
+		smap = {}
 		for s in sensors:
 			alias = ALIAS_SUFFIX+s
-			if alias in os.environ and not alias in sensors.keys():
-				sensors[os.environ[alias]] = s
+			if alias in os.environ and not alias in smap.keys():
+				smap[os.environ[alias]] = s
 			else:
-				sensors[s] = s
+				smap[s] = s
 
-		return sensors
+		return smap
 
 	def _safeName(self, name):
 		return name.lower().replace(" ","")
