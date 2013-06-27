@@ -21,7 +21,7 @@ class TemperaturePlugin(MuninPlugin):
 		if not os.path.exists(BUSPATH):
 			sensors = []
 		else:
-			sensors = [f for f in listdir(BUSPATH) if os.path.isdir(os.path.join(BUSPATH,f)) and os.path.exists(os.path.join(BUSPATH,f,w1_slave))]
+			sensors = [f for f in os.listdir(BUSPATH) if os.path.isdir(os.path.join(BUSPATH,f)) and os.path.exists(os.path.join(BUSPATH,f,w1_slave))]
 
 		#map the alias' to the sensor ID
 		smap = {}
